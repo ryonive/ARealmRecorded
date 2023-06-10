@@ -1,5 +1,4 @@
 using System;
-using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
@@ -169,7 +168,7 @@ public static unsafe class ReplayListUI
             ImGui.TableNextRow();
             ImGui.TableNextColumn();
             using (ImGuiEx.StyleColorBlock.Begin(ImGuiCol.Text, ImGui.GetColorU32(ImGuiCol.TextDisabled), !isPlayable))
-                ImGui.TextUnformatted(DateTimeOffset.FromUnixTimeSeconds(header.timestamp).LocalDateTime.ToString(CultureInfo.CurrentCulture));
+                ImGui.TextUnformatted(DateTimeOffset.FromUnixTimeSeconds(header.timestamp).LocalDateTime.ToString("g"));
             ImGui.TableNextColumn();
 
             if (editingReplay != i)
